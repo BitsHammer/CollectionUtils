@@ -1,5 +1,5 @@
 {
-  "name": "BitsHammer/CollectionUtils",
+  "name": "bits-hammer/collection-utils",
   "description": "A class contaning some functions to work with arrays and maps",
   "minimum-stability": "alpha",
   "license": "Open",
