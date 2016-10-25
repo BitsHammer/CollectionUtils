@@ -1,0 +1,12 @@
+{
+  "name": "BitsHammer/CollectionUtils",
+  "description": "A class contaning some functions to work with arrays and maps",
+  "minimum-stability": "alpha",
+  "license": "Open",
+  "authors": [
+    {
+      "name": "BrunoDM2943",
+      "email": "bdm2943@gmail.com"
+    }
+  ]
+}
