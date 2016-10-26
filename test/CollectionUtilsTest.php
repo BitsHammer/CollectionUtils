@@ -7,10 +7,9 @@
  */
 
 namespace com\bitshammer\collection\utils;
-use PHPUnit\Framework\TestCase;
 
 
-class CollectionUtilsTest extends TestCase
+class CollectionUtilsTest extends PHPUnit\Framework\TestCase
 {
     public function testContainsTrue()
     {
