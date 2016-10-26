@@ -7,13 +7,14 @@
  */
 
 namespace com\bitshammer\collection\utils;
+use PHPUnit\Framework\TestCase;
 
 
-class CollectionUtilsTest extends PHPUnit_Framework_TestCase
+class CollectionUtilsTest extends TestCase
 {
     public function testContainsTrue()
     {
-        $arr = ['A', 'B', 'C'];
+        $arr = ['A', 'B', 'C']; 
         $predicate = function ($item, $value){
             return $item == $value;
         };
