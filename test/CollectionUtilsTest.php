@@ -8,7 +8,6 @@
 
 namespace com\bitshammer\collection\utils;
 use PHPUnit\Framework\TestCase;
-require_once '../CollectionUtils.php';
 
 
 class CollectionUtilsTest extends TestCase
