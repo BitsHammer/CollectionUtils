@@ -6,9 +6,8 @@
  * Time: 22:11
  */
 
-namespace com\bitshammer\collection\utils;
-
 use PHPUnit\Framework\TestCase;
+use com\bitshammer\collection\utils\CollectionUtils;
 
 class CollectionUtilsTest extends TestCase
 {
@@ -19,6 +18,7 @@ class CollectionUtilsTest extends TestCase
             return $item == $value;
         };
         $this->assertTrue(CollectionUtils::contains($arr, 'A', $predicate));
+
 
     }
 
