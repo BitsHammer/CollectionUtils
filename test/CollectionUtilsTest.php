@@ -7,6 +7,7 @@
  */
 
 use PHPUnit\Framework\TestCase;
+require ('../src/CollectionUtils.php');
 use com\bitshammer\collection\utils\CollectionUtils;
 
 class CollectionUtilsTest extends TestCase
