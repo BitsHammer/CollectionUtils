@@ -8,11 +8,13 @@
 
 namespace com\bitshammer\collection\utils;
 
-class CollectionUtilsTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class CollectionUtilsTest extends TestCase
 {
     public function testContainsTrue()
     {
-        $arr = ['A', 'B', 'C']; 
+        $arr = ['A', 'B', 'C'];
         $predicate = function ($item, $value){
             return $item == $value;
         };
