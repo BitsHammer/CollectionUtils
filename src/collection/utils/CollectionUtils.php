@@ -43,7 +43,7 @@ class CollectionUtils
         $disjunction = array_filter($c1, function ($item) use ($c2, $compare) {
             return !self::contains($c2, $item, $compare);
         });
-        return $disjunction;
+        return array_values($disjunction);
     }
 
     /**
