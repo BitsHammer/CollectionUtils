@@ -9,7 +9,7 @@
 use PHPUnit\Framework\TestCase;
 use com\bitshammer\collection\utils\CollectionUtils;
 
-class CollectionUtilsTest extends TestCase
+class ContainsTest extends TestCase
 {
     public function testContainsTrue()
     {
@@ -18,8 +18,15 @@ class CollectionUtilsTest extends TestCase
             return $item == $value;
         };
         $this->assertTrue(CollectionUtils::contains($arr, 'A', $predicate));
+    }
 
-
+    public function testContainsFalse()
+    {
+        $arr = ['A', 'B', 'C'];
+        $predicate = function ($item, $value){
+            return $item == $value;
+        };
+        $this->assertFalse(CollectionUtils::contains($arr, 'D', $predicate));
     }
 
 }

@@ -26,7 +26,7 @@ class CollectionUtils
         $intersection = array_filter($c1, function ($item) use ($c2, $compare) {
             return self::contains($c2, $item, $compare);
         });
-        return $intersection;
+        return array_values($intersection);
     }
 
     /**
