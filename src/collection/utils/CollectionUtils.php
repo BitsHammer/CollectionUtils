@@ -57,12 +57,25 @@ class CollectionUtils
      */
     public static function contains(array $c1, $obj, Closure $compare)
     {
-        foreach($c1 as $item){
-            if($compare($item,$obj)){
+        foreach ($c1 as $item) {
+            if ($compare($item, $obj)) {
                 return true;
             }
         }
         return false;
+    }
+
+    /**
+     * Add all items from array1 to array2
+     *
+     * @param array $to
+     * @param array $from
+     */
+    public static function addAll(array &$to, array $from)
+    {
+        foreach ($from as $item){
+            array_push($to, $item);
+        }
     }
 
 }
