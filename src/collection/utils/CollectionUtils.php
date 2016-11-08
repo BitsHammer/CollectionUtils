@@ -78,4 +78,20 @@ class CollectionUtils
         }
     }
 
+    /**
+     * Looks for a object in the given array
+     * @param array $array
+     * @param $find
+     * @param Closure $equals
+     * @return mixed|null
+     */
+    public static function find(array $array, $find, Closure $equals){
+        foreach ($array as $value){
+            if($equals($value, $find)){
+                return $value;
+            }
+        }
+        return null;
+    }
+
 }
