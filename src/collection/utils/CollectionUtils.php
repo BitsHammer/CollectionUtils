@@ -94,4 +94,16 @@ class CollectionUtils
         return null;
     }
 
+    /**
+     * Return true, if one element of $col1 is contained
+     * in col2
+     * @param array $col1
+     * @param array $col2
+     * @param Closure $equals
+     * @return true, if one element of $col1 is contained in col2
+     */
+    public static function containsAny(array $col1, array $col2, Closure $equals){
+        return !empty(self::intersection($col1, $col2, $equals));
+    }
+
 }
