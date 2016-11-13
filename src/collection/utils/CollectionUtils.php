@@ -106,4 +106,21 @@ class CollectionUtils
         return !empty(self::intersection($col1, $col2, $equals));
     }
 
+    /**
+     * Return true, if all the elements of $col1 are contained
+     * in col2
+     * @param array $col1
+     * @param array $col2
+     * @param Closure $equals
+     * @return true, if all elements of $col1 are contained in col2
+     */
+    public static function containsAll(array $col1, array $col2, Closure $equals){
+        foreach($col1 as $item){
+            if(!self::contains($col2, $item, $equals)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
