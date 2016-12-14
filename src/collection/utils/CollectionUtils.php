@@ -13,23 +13,6 @@ use Closure;
 class CollectionUtils
 {
     /**
-     * Retorna a intersceção dos dois
-     * arrays recebidos por parâmetro
-     *
-     * @param array $c1
-     * @param array $c2
-     * @param $compare
-     * @return array
-     */
-    public static function intersection(array $c1, array $c2, Closure $compare)
-    {
-        $intersection = array_filter($c1, function ($item) use ($c2, $compare) {
-            return self::contains($c2, $item, $compare);
-        });
-        return array_values($intersection);
-    }
-
-    /**
      * Retorna a disjunção dos dois
      * arrays recebidos por parâmetro
      *
@@ -107,6 +90,23 @@ class CollectionUtils
     }
 
     /**
+     * Retorna a intersceção dos dois
+     * arrays recebidos por parâmetro
+     *
+     * @param array $c1
+     * @param array $c2
+     * @param $compare
+     * @return array
+     */
+    public static function intersection(array $c1, array $c2, Closure $compare)
+    {
+        $intersection = array_filter($c1, function ($item) use ($c2, $compare) {
+            return self::contains($c2, $item, $compare);
+        });
+        return array_values($intersection);
+    }
+
+    /**
      * Return true, if all the elements of $col1 are contained
      * in col2
      * @param array $col1
@@ -121,6 +121,25 @@ class CollectionUtils
             }
         }
         return true;
+    }
+
+
+    /**
+     * Transform a given collection returning a new one
+     * applying the giver transformer.
+     *
+     * @param array $col1
+     * @param Closure $transformer
+     * @return array transformed collection
+     */
+    public static function collect(array $col1, Closure $transformer)
+    {
+        $transformedCol = [];
+        foreach ($col1 as $item) {
+            $obj = $transformer($item);
+            array_push($transformedCol, $obj);
+        }
+        return $transformedCol;
     }
 
 }
